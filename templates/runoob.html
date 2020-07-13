@@ -1,0 +1,29 @@
+{%extends "base.html" %}
+
+{% block mainbody %}
+  <div>
+    <p>-----hash，array的取值-----</p>
+    <p>{{ cs1.name }}</p>
+    <p>{{ cs1.views_list.0 }}</p>
+    <p>{{ cs1.views_dict.name }}</p>
+  </div>
+  <div>
+    <p>-----管道的练习-----</p>
+    <p>{{ cs2.name1|default:"菜鸟教程666" }}</p>
+    <p>{{ cs2.name|length }}</p>
+    <p>{{ cs2.name|filesizeformat }}</p>
+    <p>{{ cs2.name|truncatechars:2 }}</p>
+    <p>{{ cs2.name|date:"Y-m-d H:i:s" }}</p>
+  </div>
+
+  <div>
+    <p>-----链接的练习-----</p>
+    <p>{{ cs3.views_str|safe }}</p>
+  </div>
+
+  <div>
+    <p>-----静态文件的练习-----</p>
+    {% load static %}
+    {{views_str|safe}}<img src="{% static "images/cs.png" %}" alt="runoob-logo">
+  </div>
+{% endblock %}
